@@ -1,6 +1,5 @@
-
 const { Schema, model } = require('mongoose');
-
+//klis cambios
 const UsuarioSchema = Schema({
     nombre: {
         type: String,
@@ -37,9 +36,9 @@ const UsuarioSchema = Schema({
 
 
 UsuarioSchema.methods.toJSON = function() {
-    const { __v, password, _id, ...usuario  } = this.toObject();
+    const { __v, password, _id, ...usuario } = this.toObject();
     usuario.uid = _id;
     return usuario;
 }
 
-module.exports = model( 'Usuario', UsuarioSchema );
+module.exports = model('Usuario', UsuarioSchema);
